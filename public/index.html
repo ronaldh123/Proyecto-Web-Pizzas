@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Web de Pizzas</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+     <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+
+                <div class="two columns u-pull-right">
+                    <ul>
+                        <li class="submenu">
+                            <img src="img/cart.png" alt="" id="img-carrito">
+                            <div id="carrito">
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="four columns">
+                        <ul class="navct">
+                            <li class="four columns "><a href="#">Iniciar sesion</a></li>
+                            <li class="four columns "><a href="#">Registrarse</a></li>
+                            <li class="four columns "><a href="#">Contacto</a></li>
+                        
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container"> 
+            <div class="row">  
+                <div class="six columns">
+                    <div class="contenido-hero">
+                        <h2>Prueba una pizza</h2>
+                        <p>Pizzas con bebidas incluidas</p>
+                        <form>
+                            <input class="u-full-width" type="text" placeholder="¿Que te gustaria probar?" id="buscador">
+                            <input type="submit" class="submit-buscador">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                <div class="four columns icono icono1">
+                    <p>12 Pizzas diferentes<br>
+                    Explora las nuevas pizzas</p>
+                </div>
+                <div class="four columns icono icono2">
+                    <p>Cheff expertos<br>
+                    Prueba las nuevas pizzas</p>
+                </div>
+                <div class="four columns icono icono3">
+                    <p>Bebida ilimitada<br>
+                    Prueba tu bebida favorita</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="lista-platillos" class="container">
+        <h1 class="encabezado">Pedidos en Linea</h1>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                   
+                   <div class="imagen">
+                    <img src="img/muzarella.jpg" class="imagen-platillo u-full-width">
+                   </div>
+
+                    <div class="info-card">
+                        <h4>Pizza muzarella</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2000 <span class="u-pull-right">$1500</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                   <div class="imagen">
+                    <img src="img/napolitana.jpg" class="imagen-platillo u-full-width">
+                   </div>
+                    <div class="info-card">
+                        <h4>Pizza napolitana</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2000 <span class="u-pull-right">$1600</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/Pizza-de-jamon-con-huevo.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza de jamon con huevo</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2500 <span class="u-pull-right">$1800</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/siciliana.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza Siciliana</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2700 <span class="u-pull-right">$2000</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/rucula-y-jamon-crudo-731x411.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza de rucula y jamon crudo</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2400 <span class="u-pull-right">$1900</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/jamon.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza de jamon</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2300 <span class="u-pull-right">$1700</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/calabresa.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza calabresa</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$3000 <span class="u-pull-right">$2500</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/fugazzeta.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza fugazzeta</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$3000 <span class="u-pull-right">$2500</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/vegetariana.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza vegetariana</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$3100 <span class="u-pull-right">$2800</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    
+                    <div class="imagen">
+                    <img src="img/carbonara.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza carbonara</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$3300 <span class="u-pull-right">$2900</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/cuatro quesos.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza cuatro quesos</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$2600 <span class="u-pull-right">$2100</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+
+                    <div class="imagen">
+                    <img src="img/pizza-margarita-3684.jpg" class="imagen-platillo u-full-width">
+                    </div>
+
+                    <div class="info-card">
+                        <h4>Pizza margarita</h4>
+                        <p>Bebida incluida</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$1500 <span class="u-pull-right">$1000</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <footer class="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <nav class="menu">
+                        <a class="enlace" href="#">Pedidos a domicilio</a>
+                        <a class="enlace" href="#">Pedidos en linea</a>
+                        <a class="enlace" href="#">Pedidos por telefono</a>
+                        <a class="enlace" href="#">Menu</a>
+                        <a class="enlace" href="#">Bebidas</a>
+                    </nav>
+                </div>
+                <div class="four columns">
+                    <nav class="menu">
+                        <a class="enlace" href="#">Restaurante</a>
+                        <a class="enlace" href="#">Ubicacion</a>
+                        <a class="enlace" href="#">Telefono</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
