@@ -1,68 +1,68 @@
 const carrito = document.getElementById('carrito');
-const cafes = document.getElementById('lista-cafe');
-const listaCafes = document.querySelector('#lista-carrito tbody');
+const pizzas = document.getElementById('lista-pizza');
+const listaPizzas = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 
 cargarEventListeners();
 
 function cargarEventListeners () {
-    cafes.addEventListener('click', comprarCafe);
-    carrito.addEventListener('click', eliminarCafe);
+    pizzas.addEventListener('click', comprarPizza);
+    carrito.addEventListener('click', eliminarPizza);
     vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
     document.addEventListener('DOMContentLoaded', leerLocalStorage)
 }
 
-function comprarCafe(e){
+function comprarPizza(e){
     e.preventDefault();
     if(e.target.classList.contains('agregar-carrito')) {
-        const cafe = e.target.parentElement.parentElement;
-        leerDatosCafe(cafe);
+        const pizza = e.target.parentElement.parentElement;
+        leerDatosPizza(pizza);
     }
 }
 
-function leerDatosCafe(cafe) {
-    const infoCafe = {
-        imagen: cafe.querySelector('img').src,
-        titulo: cafe.querySelector('h4').textContent,
-        precio: cafe.querySelector('.precio span').textContent,
-        id: cafe.querySelector('a').getAttribute('date-id')
+function leerDatosPizza(pizza) {
+    const infoPizza = {
+        imagen: pizza.querySelector('img').src,
+        titulo: pizza.querySelector('h4').textContent,
+        precio: pizza.querySelector('.precio span').textContent,
+        id: pizza.querySelector('a').getAttribute('date-id')
     }
-    insertarCarrito(infoCafe);
+    insertarCarrito(infoPizza);
 }
 
-function insertarCarrito(cafe) {
+function insertarCarrito(pizza) {
     const row = document.createElement('tr');
     row.innerHTML = `
         <td>
-            <img src="${cafe.imagen}" width=100>
+            <img src="${pizza.imagen}" width=100>
         </td>
-        <td>${cafe.titulo}</td>
-        <td>${cafe.precio}</td>
+        <td>${pizza.titulo}</td>
+        <td>${pizza.precio}</td>
         <td>
-            <a href="#" class="borrar-cafe" data-id="${cafe.id}">X</a>
+            <a href="#" class="borrar-pizza" data-id="${pizza.id}">X</a>
         </td>
     `;
-    listaCafes.appendChild(row);
-    guardarCafeLocalStorage(cafe);
+    listaPizzas.appendChild(row);
+    guardarPizzaLocalStorage(pizza);
 }
 
 
-function eliminarCafe(e) {
+function eliminarPizza(e) {
     e.preventDefault();
 
-    let cafe,
-    cafeId;
-    if(e.target.classList.contains('borrar-cafe')){
+    let pizza,
+    pizzaId;
+    if(e.target.classList.contains('borrar-pizza')){
         e.target.parentElement.parentElement.remove();
-        cafe = e.target.parentElement.parentElement;
-        cafeId = cafe.querySelector('a').getAttribute('data-id');
+        pizza = e.target.parentElement.parentElement;
+        pizzaId = pizza.querySelector('a').getAttribute('data-id');
     }
-    eliminarCafeLocalStorage(cafeId);
+    eliminarPizzaLocalStorage(pizzaId);
 }
 
 function vaciarCarrito() {
-    while(listaCafes.firstChild){
-        listaCafes.removeChild(listaCafes.firstChild);
+    while(listaPizzas.firstChild){
+        listaPizzas.removeChild(listaPizzas.firstChild);
 
     }
 
@@ -70,54 +70,54 @@ function vaciarCarrito() {
     return false;
 }
 
-function guardarCafeLocalStorage(cafe) {
-    let cafes;
-    cafes = obtenerCafesLocalStorage();
-    cafes.push(cafe);
-    localStorage.setItem('cafes', JSON.stringify(cafes))
+function guardarPizzaLocalStorage(pizza) {
+    let pizzas;
+    pizzas = obtenerPizzasLocalStorage();
+    pizzas.push(pizza);
+    localStorage.setItem('pizzas', JSON.stringify(pizzas))
 }
 
-function obtenerCafesLocalStorage() {
-    let cafesLS;
+function obtenerPizzasLocalStorage() {
+    let pizzasLS;
 
-    if(localStorage.getItem('cafes') === null){
-        cafesLS = [];
+    if(localStorage.getItem('pizzas') === null){
+        pizzasLS = [];
     } else {
-        cafesLS = JSON.parse(localStorage.getItem('cafes'));
+        pizzasLS = JSON.parse(localStorage.getItem('pizzas'));
     }
-    return cafesLS;
+    return pizzasLS;
 }
 
 function leerLocalStorage() {
-    let cafesLS;
+    let pizzasLS;
 
-    cafesLS = obtenerCafesLocalStorage();
+    pizzasLS = obtenerPizzasLocalStorage();
 
-    cafesLS.forEach(function(cafe){
+    pizzasLS.forEach(function(pizza){
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                <img src="${cafe.imagen}" width=100>
+                <img src="${pizza.imagen}" width=100>
             </td>
-            <td>${cafe.titulo}</td>
-            <td>${cafe.precio}</td>
+            <td>${pizza.titulo}</td>
+            <td>${pizza.precio}</td>
             <td>
-                <a href="#" class="borrar-cafe" data-id="${cafe.id}">X</a>
+                <a href="#" class="borrar-pizza" data-id="${pizza.id}">X</a>
             </td>
         `;
-        listaCafes.appendChild(row);
+        listaPizzas.appendChild(row);
     });
 
 }
 
-function eliminarCafeLocalStorage(cafe) {
-    let cafesLS;
+function eliminarPizzaLocalStorage(pizza) {
+    let pizzasLS;
 
-    cafesLS = obtenerCafesLocalStorage();
+    pizzasLS = obtenerPizzasLocalStorage();
 
-    cafesLS.forEach(function(cafesLS, index){
-        if(cafesLS.id === cafe) {
-            cafesLS.splice(index, 1)
+    pizzasLS.forEach(function(pizzasLS, index){
+        if(pizzasLS.id === pizza) {
+            pizzasLS.splice(index, 1)
         }
     });
 
